@@ -19,5 +19,8 @@ You will see that the grid colums are colored for a better view .
 
 The main files you need to edit are **index.html**, **app.scss** and **app.js**(both for adding more components), style/**style.css** . You can also add more files to your project .
 
+<<<<<<< HEAD
 [Demo](https://demo-materialtemplateweb.herokuapp.com/)
 
+=======
+>>>>>>> b67ef590a746487fc7ee1db7286d97774fe0fd3c
