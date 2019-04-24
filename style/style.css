@@ -1,0 +1,59 @@
+body{
+  /* font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Open Sans', sans-serif; */
+  font-family: 'Heebo', sans-serif;
+}
+.cover{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),
+  url('/img/cover.jpg');
+  height: 94vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: auto;
+}
+
+.center-content {
+  display: flex; /* establish flex container */
+  justify-content: center; /* center #inner horizontally */
+  align-items: center; /* center #inner vertically */
+}
+
+.photo-card {
+  height: 320px;
+  width: 320px;
+  background: url('/img/profilePicture.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.padding-24{
+  padding: 24px;
+}
+
+.center-text{
+  text-align: center;
+}
+
+embed{
+  margin:10px;
+}
+
+.project-card{
+  max-width: 350px;
+}
+
+.footer{
+  padding:30px;
+  background-color:#212121;
+}
+
+a.fab{
+  font-size:32px;
+  color:azure;
+  margin:0 10px 0 10px;
+  text-decoration: none;
+}
+
+.copyright{
+  color: azure;
+}
