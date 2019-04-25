@@ -24,7 +24,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
     "start": "webpack-dev-server",
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress"
+    "heroku-postbuild": "webpack -p --config ./webpack.config.js --progress"
   },
   "author": "me",
   "license": "ISC"
