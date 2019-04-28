@@ -1,35 +1,45 @@
-import mdcAutoInit from '@material/auto-init';
-import {MDCRipple} from '@material/ripple';
-import {MDCList} from "@material/list";
-import {MDCTopAppBar} from "@material/top-app-bar";
-import {MDCDrawer} from "@material/drawer";
-import {MDCTextField} from '@material/textfield';
-//Ripples
-// const ripple = document.querySelectorAll('.mdc-button, .mdc-icon-button, .mdc-card__primary-action');
-// ripple.forEach(ripple => MDCRipple.attachTo(ripple));
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 
-const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
-const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
-  return new MDCRipple(el);
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+var app = express();
+
+// Favicon
+let favicon = require('serve-favicon');
+app.use(favicon(__dirname + '/favicon.png'));
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-// Drawer
-const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
-
-// Top App Bar
-const topAppBar = MDCTopAppBar.attachTo(document.getElementById('app-bar'));
-topAppBar.setScrollTarget(document.getElementById('main-content'));
-topAppBar.listen('MDCTopAppBar:nav', () => {
-  drawer.open = !drawer.open;
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
 
-//List Drawer Ripple
-const list = new MDCList(document.querySelector('.mdc-list'));
-const listItemRipples = list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
-
-// Text Fields
-const selectortextField = '.mdc-text-field';
-const textField = [].map.call(document.querySelectorAll(selectortextField), function(el){
-  return new MDCTextField(el);
-});
+module.exports = app;
