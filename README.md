@@ -1,6 +1,6 @@
 # Material Template Website
 
-This is *one page* presentation template. It can be used for cv, learning how to use **Material desig For Web**, or just a site about yourself in general (hobby's, passions etc), etc.   
+This is *one page* presentation template. It can be used for cv, learning how to use **Material Design For Web**, or just a site about yourself in general (hobby's, passions etc), etc.   
 This template is build with [Material Design](https://material.io/develop/web/), [Express](https://expressjs.com/), and [Webpack](https://webpack.js.org/).   
 Font Awesome and Icon sources: [Konpa](https://konpa.github.io/devicon/), [Fontawesome](https://fontawesome.com/)
 
