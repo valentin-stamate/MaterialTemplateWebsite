@@ -14,7 +14,7 @@
     "http-errors": "~1.6.2",
     "material-components-web": "^1.1.1",
     "morgan": "~1.9.0",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "serve-favicon": "^2.5.0"
   },
   "main": "index.js",
